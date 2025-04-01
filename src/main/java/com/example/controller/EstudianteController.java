@@ -32,12 +32,12 @@ public class EstudianteController {
         List<EstudianteDTO> estudiantes = estudianteService.obtenerTodosLosEstudiantes();
         return ResponseEntity.ok(estudiantes);
     }
-
     @PostMapping
     public ResponseEntity<EstudianteDTO> crearEstudiante(@RequestBody EstudianteDTO estudianteDTO) {
         EstudianteDTO nuevoEstudiante = estudianteService.crearEstudiante(estudianteDTO);
         return ResponseEntity.status(201).body(nuevoEstudiante);
     }
+    
 
     @GetMapping("/{id}")
     public ResponseEntity<EstudianteDTO> obtenerEstudiantePorId(@PathVariable Long id) {
@@ -55,4 +55,10 @@ public class EstudianteController {
     public ResponseEntity<Void> eliminarEstudiante(@PathVariable Long id) {
         return estudianteService.eliminarEstudiante(id) ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/test")
+    public String testEndpoint() {
+        return "Test endpoint working!";
+    }
+
 }

@@ -7,7 +7,7 @@ import lombok.Builder;
 
 import java.time.LocalDate;
 
-@Data  // Lombok generará automáticamente los getters y setters
+@Data 
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
