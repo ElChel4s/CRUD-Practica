@@ -43,8 +43,7 @@ public class EstudianteController {
     public ResponseEntity<EstudianteDTO> obtenerEstudiantePorId(@PathVariable Long id) {
         EstudianteDTO estudiante = estudianteService.obtenerEstudiantePorId(id);
         return estudiante != null ? ResponseEntity.ok(estudiante) : ResponseEntity.notFound().build();
-    }
-    
+    }    
 
     @PutMapping("/{id}")
     public ResponseEntity<EstudianteDTO> actualizarEstudiante(@PathVariable Long id, @RequestBody EstudianteDTO estudianteDTO) {
